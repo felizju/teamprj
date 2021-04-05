@@ -47,8 +47,6 @@ public class MemoryRoomRepository implements RoomRepository {
 
     }
 
-
-
     @Override
     public void reservationCancel(int reservationNumber) {
 
