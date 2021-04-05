@@ -9,7 +9,6 @@ import java.util.Map;
 
 public class MemoryRoomRepository implements RoomRepository {
 
-
     // 객실 정보 저장할 자료 구조
     private static final Map<Integer, Hotel> roomDb = new HashMap<>();
 
