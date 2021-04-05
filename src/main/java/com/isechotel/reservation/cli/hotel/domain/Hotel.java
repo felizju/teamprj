@@ -105,7 +105,8 @@ public class Hotel {
         this.reservationNumber = reservationNumber;
     }
 
-    public boolean isReservation() {
+    public boolean isReservation(boolean flag) {
+        this.reservation = flag;
         return reservation;
     }
 

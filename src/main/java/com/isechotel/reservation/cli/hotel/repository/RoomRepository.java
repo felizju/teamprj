@@ -1,5 +1,6 @@
 package com.isechotel.reservation.cli.hotel.repository;
 
+import com.isechotel.reservation.cli.hotel.SearchCondition;
 import com.isechotel.reservation.cli.hotel.domain.Hotel;
 
 import java.util.List;
@@ -20,7 +21,7 @@ public interface RoomRepository {
     void checkOut(int reservationNumber, String checkOutDate);
 
     // 검색 기능
-    List<Hotel> searchRoom(int reservationNumber, String roomName, int charge, boolean reservation);
+    List<Hotel> searchRoom(int reservationNumber, String roomName, int charge, boolean reservation, SearchCondition condition);
 
 
 }
