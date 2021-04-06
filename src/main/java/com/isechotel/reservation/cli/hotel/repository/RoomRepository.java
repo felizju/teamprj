@@ -1,27 +1,23 @@
 package com.isechotel.reservation.cli.hotel.repository;
 
-import com.isechotel.reservation.cli.hotel.SearchCondition;
-import com.isechotel.reservation.cli.hotel.domain.Hotel;
+import com.isechotel.reservation.cli.hotel.domain.SearchCondition;
+import com.isechotel.reservation.cli.hotel.domain.Room;
 
 import java.util.List;
 
 // 역할 : 저장소 기능의 명세
 public interface RoomRepository {
 
-    // 예약기능
-    void reservationRoom(Hotel hotel);
+    // 객실 추가
+    void addRoom(Room room);
 
-    // 예약 취소기능
-    void reservationCancel(int reservationNumber);
+    // 객실 삭제
+    void removeRoom(int roomNumber);
 
-    // 체크인 기능
-    void checkIn(int reservationNumber, String checkInDate);
+    // 객실 검색 기능
+    List<Room> searchRoom(String keyword, SearchCondition condition);
 
-    // 체크아웃 기능
-    void checkOut(int reservationNumber, String checkOutDate);
-
-    // 검색 기능
-    List<Hotel> searchRoom(int reservationNumber, String roomName, int charge, boolean reservation, SearchCondition condition);
-
+    // 객실 1개 검색 기능
+    Room searchRoomOne(int roomNumber);
 
 }

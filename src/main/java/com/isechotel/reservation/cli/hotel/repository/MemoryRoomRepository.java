@@ -1,14 +1,14 @@
 package com.isechotel.reservation.cli.hotel.repository;
 
-import com.isechotel.reservation.cli.hotel.SearchCondition;
-import com.isechotel.reservation.cli.hotel.domain.Hotel;
+import com.isechotel.reservation.cli.hotel.domain.SearchCondition;
+import com.isechotel.reservation.cli.hotel.domain.Room;
 
 import java.util.*;
 
 public class MemoryRoomRepository implements RoomRepository {
 
     // 객실 정보 저장할 자료 구조
-    private static final Map<Integer, Hotel> roomDb = new HashMap<>();
+    private static final Map<Integer, Room> roomDb = new HashMap<>();
 
     // 자료 초기화
     static {
@@ -17,16 +17,16 @@ public class MemoryRoomRepository implements RoomRepository {
 
     // 자료 생성
     private static void insertRoomData() {
-        Hotel room1 = new Hotel(1, "스탠다드", 2, 30000);
-        Hotel room2 = new Hotel(2, "디럭스", 4, 50000);
-        Hotel room3 = new Hotel(3, "스탠다드", 2, 30000);
-        Hotel room4 = new Hotel(4, "디럭스", 2, 50000);
-        Hotel room5 = new Hotel(5, "스탠다드", 2, 30000);
-        Hotel room6 = new Hotel(6, "스탠다드", 2, 30000);
-        Hotel room7 = new Hotel(7, "스위트룸", 2, 100000);
-        Hotel room8 = new Hotel(8, "스위트룸", 2, 100000);
-        Hotel room9 = new Hotel(9, "비즈니스룸", 1, 20000);
-        Hotel room10 = new Hotel(10, "비즈니스룸", 1, 20000);
+        Room room1 = new Room("스탠다드", 30000);
+        Room room2 = new Room("디럭스",  50000);
+        Room room3 = new Room("스탠다드", 30000);
+        Room room4 = new Room("디럭스",  50000);
+        Room room5 = new Room("스탠다드", 30000);
+        Room room6 = new Room("스탠다드", 30000);
+        Room room7 = new Room( "스위트룸", 100000);
+        Room room8 = new Room( "스위트룸",  100000);
+        Room room9 = new Room("비즈니스룸", 20000);
+        Room room10 = new Room( "비즈니스룸", 20000);
 
         roomDb.put(room1.getRoomNumber(), room1);
         roomDb.put(room2.getRoomNumber(), room2);
@@ -40,80 +40,64 @@ public class MemoryRoomRepository implements RoomRepository {
         roomDb.put(room10.getRoomNumber(), room10);
     }
 
-    @Override
-    public void reservationRoom(Hotel hotel) {
 
+    // 객실 추가
+    @Override
+    public void addRoom(Room room) {
+        roomDb.put(room.getRoomNumber(), room);
     }
 
+    // 객실 삭제
     @Override
-    public void reservationCancel(int reservationNumber) {
-
+    public void removeRoom(int roomNumber) {
+        roomDb.remove(roomNumber);
     }
 
+    // 객실 검색
     @Override
-    public void checkIn(int reservationNumber, String checkInDate) {
-        List<Hotel> hotels = new ArrayList<>();
-        for (Integer k : roomDb.keySet()) {
-            if (reservationNumber == hotels.get(k).getReservationNumber()) {
-                hotels.get(k).isReservation(true);
-            }
-
-        }
-
-        Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
-
-
-    }
-
-    @Override
-    public void checkOut(int reservationNumber, String checkOutDate) {
-
-    }
-
-    @Override
-    public List<Hotel> searchRoom(int reservationNumber, String roomName, int charge, boolean reservation
-            , SearchCondition condition) {
-        List<Hotel> hotels = null;
+    public List<Room> searchRoom(String keyword , SearchCondition condition) {
+        List<Room> results = null;
 
         switch (condition) {
             case ROOM_NUMBER:
+                results = search(keyword, (k,r) -> Integer.parseInt(k) == r.getRoomNumber());
                 break;
-
-            case RESERVATION:
+            case ROOM_NAME:
+                results = search(keyword, (k,r) -> k.equals(r.getRoomName()));
                 break;
-
-            case CHARGE:
-                break;
-
             case ALL:
+                results = search(keyword, (k, r) -> true);
                 break;
-
             default:
+                return null;
         }
-        return hotels;
+        return results;
     }
 
-    private List<Hotel> search(String keyword, MoviePredicate mp) {
-        List<Hotel> movieList = new ArrayList<>();
+    // 객실 하나 검색
+    @Override
+    public Room searchRoomOne(int roomNumber) {
+        return roomDb.get(roomNumber);
+    }
+
+    // 검색
+    private List<Room> search(String keyword, RoomPredicate rp) {
+        List<Room> roomList = new ArrayList<>();
         for (Integer key : roomDb.keySet()) {
-            Hotel movie = roomDb.get(key);
+            Room room = roomDb.get(key);
 
             // 검색 키워드와 발매연도 일치하는 movie만 리스트에 추가
-            if (mp.test(keyword, movie)) {
-                movieList.add(movie);
+            if (rp.test(keyword, room)) {
+                roomList.add(room);
             }
         }
-        return movieList;
+        return roomList;
     }
 
     // 검색 조건을 위한 인터페이스 (내부)
     @FunctionalInterface // 람다식 가능한지 오류 확인해줌
-    interface MoviePredicate{
-        boolean test(String keyword, Hotel movie);
+    interface RoomPredicate{
+        boolean test(String keyword, Room room);
     }
 
-/*    public static Map<Integer, Hotel> getRoomDb() {
-        return roomDb;
-    }*/
 }
