@@ -12,7 +12,7 @@ public interface RoomRepository {
     void addRoom(Room room);
 
     // 객실 삭제
-    void removeRoom(int roomNumber);
+//    void removeRoom(int roomNumber);
 
     // 객실 검색 기능
     List<Room> searchRoom(String keyword, SearchCondition condition);

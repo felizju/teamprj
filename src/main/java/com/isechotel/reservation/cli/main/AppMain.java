@@ -11,7 +11,6 @@ public class AppMain {
             AppUI.startScreen();
             int selection = AppUI.inputInteger("---▶  ");
             FrontController.managementSystem(selection);
-
         }
     }
 
