@@ -1,7 +1,7 @@
-package com.isechotel.reservation.cli.hotel.repository;
+package com.isechotel.reservation.cli.room.repository;
 
-import com.isechotel.reservation.cli.hotel.domain.SearchCondition;
-import com.isechotel.reservation.cli.hotel.domain.Room;
+import com.isechotel.reservation.cli.room.domain.SearchCondition;
+import com.isechotel.reservation.cli.room.domain.Room;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package com.isechotel.reservation.cli.hotel.domain;
+package com.isechotel.reservation.cli.room.domain;
 
 public enum SearchCondition {
 

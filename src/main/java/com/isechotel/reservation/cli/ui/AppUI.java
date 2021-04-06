@@ -29,7 +29,6 @@ public class AppUI {
 
 
 
-
     //시작화면 출력
     public static void startScreen() {
         System.out.println("\n========= 호텔 관리 시스템 =========");

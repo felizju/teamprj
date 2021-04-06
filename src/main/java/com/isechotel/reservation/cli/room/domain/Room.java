@@ -1,4 +1,4 @@
-package com.isechotel.reservation.cli.hotel.domain;
+package com.isechotel.reservation.cli.room.domain;
 
 // 역할 : 이 클래스는 하나의 객실 정보를 저장
 public class Room {
