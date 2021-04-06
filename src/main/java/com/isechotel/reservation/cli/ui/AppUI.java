@@ -49,8 +49,8 @@ public class AppUI {
         System.out.println("----------------------------------------");
     }
 
-    //검색 조건 화면
-    public static void searchConditionScreen() {
+    // 객실 검색 조건 화면
+    public static void searchRoomConditionScreen() {
         System.out.println("\n============== 객실 검색 ===============");
         System.out.println("[ 1. 객실명 | 2. 객실번호 | 3. 전체검색 ]");
     }
@@ -65,7 +65,12 @@ public class AppUI {
         System.out.println("----------------------------------------");
     }
 
-
+    //고객 검색 조건 화면
+    public static void searchUserConditionScreen() {
+        System.out.println("\n============== 고객 검색 ===============");
+        System.out.println("[ 1. 고객명 | 2. 고객핸드폰번호 | 3. 지역별 | 4. 전체검색 ]");
+    }
+    
     // 예약 관리 시스템 화면 출력
     public static void reservationManagementScreen() {
         System.out.println("\n========= 예약 관리 시스템 =========");

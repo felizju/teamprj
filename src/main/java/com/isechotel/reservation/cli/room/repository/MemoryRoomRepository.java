@@ -56,7 +56,7 @@ public class MemoryRoomRepository implements RoomRepository {
 
     // 객실 검색
     @Override
-    public List<Room> searchRoom(String keyword , SearchCondition condition) {
+    public List<Room> searchRoom(String keyword, SearchCondition condition) {
         List<Room> results = null;
 
         switch (condition) {

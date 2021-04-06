@@ -71,7 +71,7 @@ public class RoomController implements AppController {
     // 객실 정보 검색 기능
     private void searchRoomData() {
 
-        AppUI.searchConditionScreen();
+        AppUI.searchRoomConditionScreen();
         int selection = AppUI.inputInteger("--▶ ");
 
         SearchCondition condition = SearchCondition.ALL;
