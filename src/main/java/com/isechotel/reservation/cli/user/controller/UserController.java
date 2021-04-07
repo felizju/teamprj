@@ -1,8 +1,8 @@
 package com.isechotel.reservation.cli.user.controller;
 
 import com.isechotel.reservation.cli.main.AppController;
+import com.isechotel.reservation.cli.room.domain.SearchCondition;
 import com.isechotel.reservation.cli.ui.AppUI;
-import com.isechotel.reservation.cli.user.domain.SearchCondition;
 import com.isechotel.reservation.cli.user.domain.User;
 import com.isechotel.reservation.cli.user.repository.MemoryUserRepository;
 import com.isechotel.reservation.cli.user.repository.UserRepository;
@@ -58,6 +58,7 @@ public class UserController implements AppController {
                 break;
             case 4:
                 System.out.println("\n====== 전체 고객 검색합니다. ======");
+                condition = SearchCondition.ALL;
                 break;
             default:
                 System.out.println("\n★★ 메뉴를 잘못 선택하셨습니다. ★★");
@@ -77,7 +78,7 @@ public class UserController implements AppController {
             }
         }else{
             System.out.println("\n★★ 검색 결과가 없습니다. ★★");
-   }
+        }
     }
 
     private void add() {

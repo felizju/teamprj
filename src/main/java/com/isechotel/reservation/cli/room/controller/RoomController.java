@@ -20,7 +20,7 @@ public class RoomController implements AppController {
         while(true){
 
             AppUI.roomManagementScreen();
-            int selection = AppUI.inputInteger("---▶ ");
+            int selection = AppUI.inputInteger("--▶ ");
 
             switch (selection){
                 case 1:
@@ -37,7 +37,7 @@ public class RoomController implements AppController {
                 default:
                     System.out.println("\n★★ 메뉴를 잘못 선택하셨습니다. ★★");
             }
-            System.out.println("계속 진행하려면 ---▶ [ENTER] 를 누르세요");
+            System.out.println("\n★★  계속 진행하려면 ENTER 를 누르세요. ★★");
             AppUI.inputString("");
 
         }//end while
@@ -87,6 +87,7 @@ public class RoomController implements AppController {
                 break;
             case 3:
                 System.out.println("\n====== 전체 객실 검색합니다. ======");
+                condition = SearchCondition.ALL;
                 break;
             default:
                 System.out.println("\n★★ 메뉴를 잘못 선택하셨습니다. ★★");

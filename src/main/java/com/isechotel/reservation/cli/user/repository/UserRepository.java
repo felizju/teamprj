@@ -1,6 +1,6 @@
 package com.isechotel.reservation.cli.user.repository;
 
-import com.isechotel.reservation.cli.user.domain.SearchCondition;
+import com.isechotel.reservation.cli.room.domain.SearchCondition;
 import com.isechotel.reservation.cli.user.domain.User;
 
 import java.util.List;
@@ -12,9 +12,10 @@ public interface UserRepository {
     void addUser(User user);
 
     // 고객 리스트 검색
-    List<User> searchUserList(String keyword, SearchCondition condition);
+    List<User> searchUserList(String userName, SearchCondition condition);
 
     // 고객 1명 검색 기능
     User searchUserOne(int userNumber);
+
 
 }

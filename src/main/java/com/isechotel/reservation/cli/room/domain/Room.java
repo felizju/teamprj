@@ -9,13 +9,31 @@ public class Room {
     private String roomName;
     private int persons;
     private int charge;
-    private boolean reservation; // 객실 예약 여부
+    private boolean reservationFlag; // 객실 예약 여부
+    private String rentUser;
+    private int reservationNumber;
 
     // 생성자
     public Room(String roomName, int charge) {
         this.roomNumber = ++sequence;
         this.roomName = roomName;
         this.charge = charge;
+    }
+
+    public int getReservationNumber() {
+        return reservationNumber;
+    }
+
+    public void setReservationNumber(int reservationNumber) {
+        this.reservationNumber = reservationNumber;
+    }
+
+    public String getRentUser() {
+        return rentUser;
+    }
+
+    public void setRentUser(String rentUser) {
+        this.rentUser = rentUser;
     }
 
     public static int getSequence() {
@@ -59,11 +77,11 @@ public class Room {
     }
 
     public boolean isReservation() {
-        return reservation;
+        return reservationFlag;
     }
 
     public void setReservation(boolean reservation) {
-        this.reservation = reservation;
+        this.reservationFlag = reservation;
     }
 
     @Override
@@ -73,7 +91,7 @@ public class Room {
                 ", roomName='" + roomName + '\'' +
                 ", persons=" + persons +
                 ", charge=" + charge +
-                ", reservation=" + reservation +
+                ", reservation=" + reservationFlag +
                 '}';
     }
 
