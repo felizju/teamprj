@@ -69,12 +69,6 @@ public class ResController implements AppController {
                 System.out.println("## 예약하시는 분의 성함을 입력하세요.");
                 String resName = AppUI.inputString(">>> ");
 
-                /*System.out.println("## 예약하시는 분의 휴대전화를 입력하세요.");
-                String resPhone = AppUI.inputString(">>> ");*/
-
-                /*System.out.println("## 투숙하는 인원을 입력하세요.");
-                int resPersons = AppUI.inputInteger(">>> ");*/
-
                 System.out.println("## 투숙할 기간을 입력해주세요.");
                 int rentDay = AppUI.inputInteger(">>> ");
 
@@ -100,13 +94,12 @@ public class ResController implements AppController {
                     System.out.printf("[%s]님 예약이 완료되었습니다. 감사합니다.\n", resUser.getUserName());
                     System.out.printf("[%s]님의 예약번호는 %d 입니다.\n", resUser.getUserName(), newRes.getResNumber());
                     System.out.printf("[%s]님의 결재 금액은 %d입니다.\n", resUser.getUserName(), ChargeMoney(rentDay, rentRoom.getRoomName()));
-
+                    AppUI.inputString("Enter를 누르면 계속 진행합니다. >>>");
 
                 } else {
                     System.out.println("고객 정보가 없습니다. 고객 등록부터 진해해주세요.");
                     break;
                 }
-
 
             }else {
                 System.out.println("예약자 정보가 존재하지 않습니다.");

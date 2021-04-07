@@ -42,7 +42,7 @@ public class MemoryUserRepository implements UserRepository {
                 break;
             case USER_PHONE:
                 // 핸드폰 뒷번호 4자리만 입력하는 걸로 변경하기!!!!!!!
-                results = searchUser(keyword, (k,u) -> k.equals(u.getPhone()));
+                results = searchUser(keyword, (k,u) -> k.equals(u.getPhone().substring(u.getPhone().lastIndexOf("-") + 1)));
                 break;
             case REGION:
                 results = searchUser(keyword, (k,u) -> k.equals(u.getRegion()));

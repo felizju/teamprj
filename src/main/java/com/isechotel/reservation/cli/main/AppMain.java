@@ -8,6 +8,7 @@ public class AppMain {
 
         while(true){
 
+            AppUI.asciiArt();
             AppUI.startScreen();
             int selection = AppUI.inputInteger("---▶  ");
             FrontController.managementSystem(selection);
