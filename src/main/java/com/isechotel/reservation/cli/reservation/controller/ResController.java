@@ -91,9 +91,7 @@ public class ResController implements AppController {
                         }
                     }
 
-
-
-//                    User newUser = new User(resName, "");
+                    //User newUser = new User(resName, "");
                     Reservation newRes = new Reservation(resUser, rentRoom, rentDay);
 
                     userRepository.addUser(resUser);
@@ -169,10 +167,10 @@ public class ResController implements AppController {
         System.out.println("예약자명을 입력하세요. 0을 입력하면 이전으로 돌아갑니다.");
         String resName = AppUI.inputString(">>> ");
         System.out.println("예약자 번호를 입력하세요.");
-        int resNum = AppUI.inputInteger(">>> ");
+        String resNum = AppUI.inputString(">>> ");
         if (resName.equals("0")) return;
 
-        List<User> resUserList = userRepository.searchUserList(resName, SearchCondition.USER_NAME);
+        List<User> resUserList = userRepository.searchUserList(resNum, SearchCondition.RESERVATION_NUMBER);
         int count = resUserList.size();
 
         if (count > 0) {

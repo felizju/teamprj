@@ -27,12 +27,12 @@ public class User {
         this.region = region;
     }
 
-    public User(String userName, String region) {
+/*    public User(String userName, String region) {
         this.userNumber = ++sequence;
         this.userName = userName;
         this.phone = phone;
         this.region = region;
-    }
+    }*/
 
     public int getUserNumber() {
         return userNumber;
@@ -73,9 +73,10 @@ public class User {
                 ", userName='" + userName + '\'' +
                 ", phone='" + phone + '\'' +
                 ", region='" + region + '\'' +
+                ", resNumber=" + resNumber +
+                ", totalCharge=" + totalCharge +
                 '}';
     }
-
 }
 
 
