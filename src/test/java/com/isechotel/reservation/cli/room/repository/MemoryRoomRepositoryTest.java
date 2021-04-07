@@ -15,10 +15,9 @@ class MemoryRoomRepositoryTest {
     @DisplayName("전체 검색 테스트")
     public void test() {
 
-        List<Room> roomList =  roomRepository.searchRoom("1", SearchCondition.ROOM_NUMBER);
+        List<Room> roomList =  roomRepository.searchRoom("", SearchCondition.RESERVATION_FLAG);
 
         for (Room room : roomList) {
-            room.setReservation(true);
             System.out.println(room);
         }
 

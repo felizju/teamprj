@@ -20,11 +20,12 @@ public class Reservation {
 
 
     // 생성자
-    public Reservation(User user, Room room) {
+    public Reservation(User user, Room room, int rentNum) {
         this.user = user;
         this.room = room;
         this.resNumber = ++sequence;
         this.checkInDate = LocalDate.now();
+        this.checkOutDate = checkInDate.plusDays(rentNum);
         this.status = Status.IN;
         // 연장 일수 구현++
     }

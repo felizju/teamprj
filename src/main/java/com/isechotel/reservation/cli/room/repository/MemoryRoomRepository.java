@@ -47,15 +47,16 @@ public class MemoryRoomRepository implements RoomRepository {
         roomDb.put(room.getRoomNumber(), room);
     }
 
-    // 객실 삭제
+/*    // 객실 삭제
     @Override
     public void removeRoom(int roomNumber) {
         roomDb.remove(roomNumber);
-    }
+    }*/
+
 
     // 객실 검색
     @Override
-    public List<Room> searchRoom(String keyword , SearchCondition condition) {
+    public List<Room> searchRoom(String keyword, SearchCondition condition) {
         List<Room> results = null;
 
         switch (condition) {
@@ -67,6 +68,13 @@ public class MemoryRoomRepository implements RoomRepository {
                 break;
             case ALL:
                 results = search(keyword, (k, r) -> true);
+                break;
+            case RESERVATION_FLAG:
+//                roomDb.get(1).setReservation(true);
+                results = search(keyword, (k, r) -> !r.isReservation());
+                break;
+            case RESERVATION_NUMBER:
+                results = search(keyword, (k, r) -> Integer.parseInt(k) == r.getReservationNumber());
                 break;
             default:
                 return null;
@@ -86,7 +94,6 @@ public class MemoryRoomRepository implements RoomRepository {
         for (Integer key : roomDb.keySet()) {
             Room room = roomDb.get(key);
 
-            // 검색 키워드와 발매연도 일치하는 movie만 리스트에 추가
             if (rp.test(keyword, room)) {
                 roomList.add(room);
             }
