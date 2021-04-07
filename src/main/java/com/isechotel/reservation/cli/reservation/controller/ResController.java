@@ -99,6 +99,7 @@ public class ResController implements AppController {
 
                     System.out.printf("[%s]님 예약이 완료되었습니다. 감사합니다.\n", resUser.getUserName());
                     System.out.printf("[%s]님의 예약번호는 %d 입니다.\n", resUser.getUserName(), newRes.getResNumber());
+                    System.out.printf("[%s]님의 결재 금액은 %d입니다.\n", resUser.getUserName(), ChargeMoney(rentDay, rentRoom.getRoomName()));
 
 
                 } else {
@@ -183,5 +184,21 @@ public class ResController implements AppController {
         }
 
     }
+
+    int ChargeMoney(int rentNum, String roomName) {
+
+        if (roomName.equals("스위트룸")) {
+            return rentNum * 100000;
+        } else if(roomName.equals("디럭스룸")) {
+            return rentNum * 50000;
+        } else if(roomName.equals("비즈니스룸")) {
+            return rentNum * 20000;
+        } else {
+            return rentNum * 30000;
+        }
+
+
+    }
+
 
 }
