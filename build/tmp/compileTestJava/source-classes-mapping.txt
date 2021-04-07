@@ -1,2 +1,0 @@
-com/isechotel/reservation/cli/hotel/repository/MemoryRoomRepositoryTest.java
- com.isechotel.reservation.cli.hotel.repository.MemoryRoomRepositoryTest
