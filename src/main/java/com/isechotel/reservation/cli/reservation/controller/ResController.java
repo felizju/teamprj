@@ -187,6 +187,10 @@ public class ResController implements AppController {
             }
             System.out.println("\n---▶  [ENTER]를 누르면 이전으로 돌아갑니다!");
             AppUI.inputString("");
+        } else {
+            System.out.println("등록된 고객이 아닙니다.");
+            AppUI.inputString("");
+            return;
         }
     }
 

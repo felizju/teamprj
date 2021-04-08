@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="766d4e9d-bf08-4375-b2b0-4c892adcc345" name="디폴트 변경 목록" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/final.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/isechotel/reservation/cli/reservation/controller/ResController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isechotel/reservation/cli/reservation/controller/ResController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isechotel/reservation/cli/room/controller/RoomController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isechotel/reservation/cli/room/controller/RoomController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isechotel/reservation/cli/ui/AppUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isechotel/reservation/cli/ui/AppUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/isechotel/reservation/cli/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isechotel/reservation/cli/user/controller/UserController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +38,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.project.gradle" />
+    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.색 구성표 글꼴" />
   </component>
   <component name="RunManager">
     <configuration name="AppMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -86,5 +81,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>
