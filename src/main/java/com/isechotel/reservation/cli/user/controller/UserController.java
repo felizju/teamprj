@@ -47,17 +47,17 @@ public class UserController implements AppController {
         SearchCondition condition = SearchCondition.ALL;
         switch (selection) {
             case 1:
-                System.out.println("\n-------- [고객명] 으로 검색 --------");
+                System.out.println("\n━━━━⊱* [고객명] 으로 검색 *⊰━━━━━");
                 condition = SearchCondition.USER_NAME;
 
                 break;
             case 2:
-                System.out.println("\n-------- [연락처] 으로 검색 --------");
+                System.out.println("\n━━━━⊱* [연락처] 으로 검색 *⊰━━━━━");
                 System.out.println("---▶  핸드폰 번호 뒷 4자리를 입력해주세요!");
                 condition = SearchCondition.USER_PHONE;
                 break;
             case 3:
-                System.out.println("\n-------- [지역별] 으로 검색 --------");
+                System.out.println("\n━━━━⊱* [지역별] 으로 검색 *⊰━━━━━");
                 condition = SearchCondition.REGION;
                 break;
             case 4:
@@ -74,22 +74,24 @@ public class UserController implements AppController {
         List<User> userList = userRepository.searchUserList(keyword, condition);
         int cnt = userList.size();
         if (cnt > 0) {
-            System.out.printf("\n============ 검색 결과  ============\n[ 총 %d건 조회되었습니다! ]\n", cnt);
+            System.out.printf("\n━━━━━━━━━━⊱* 검색 결과 *⊰━━━━━━━━━\n[ 총 %d건 조회되었습니다! ]\n", cnt);
             for (User user : userList) {
                 System.out.println(user);
             }
-            System.out.println("==================================");
+            System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━⊱*");
         }else{
             System.out.println("[ 검색 결과가 없습니다! ]");
         }
     }
 
     private void add() {
-        System.out.println("\n============ 고객 등록 ============");
+        System.out.println("\n┏━━━━━━━✦❘༻ 고객 등록 ༺❘✦━━━━━━━━━┓");
         String name = AppUI.inputString("--—▶  고객명 : ");
         String phone = AppUI.inputString("--—▶  연락처 : ");
         String region = AppUI.inputString("--—▶  지역명 : ");
         userRepository.addUser(new User(name, phone, region));
+        System.out.println("┗━━━✦❘༻ 등록이 완료되었습니다.༺❘✦━━━┛");
+
 
 //        System.out.printf("\n [%s] 고객 정보가 정상 등록되었습니다!");
 

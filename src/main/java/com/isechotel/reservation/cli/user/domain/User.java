@@ -68,14 +68,9 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "userNumber=" + userNumber +
-                ", userName='" + userName + '\'' +
-                ", phone='" + phone + '\'' +
-                ", region='" + region + '\'' +
-                ", resNumber=" + resNumber +
-                ", totalCharge=" + totalCharge +
-                '}';
+        return String.format(">>> 고객번호 : %s\n>>> 고객명 : %s\n>>> 연락처 : %s\n>>> 거주지 : %s\n",
+                userNumber, userName, phone, region, resNumber);
+
     }
 }
 

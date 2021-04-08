@@ -47,12 +47,6 @@ public class MemoryRoomRepository implements RoomRepository {
         roomDb.put(room.getRoomNumber(), room);
     }
 
-/*    // 객실 삭제
-    @Override
-    public void removeRoom(int roomNumber) {
-        roomDb.remove(roomNumber);
-    }*/
-
 
     // 객실 검색
     @Override

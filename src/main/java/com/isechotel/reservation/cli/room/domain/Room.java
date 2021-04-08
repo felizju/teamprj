@@ -86,13 +86,18 @@ public class Room {
 
     @Override
     public String toString() {
-        return "Room{" +
+
+        String reservationFlag = this.reservationFlag ? "대여중" : "대여가능";
+
+        return  String.format(">>> 객실번호: %s, 객실명: %s, " + "객실요금: %d원, 대여상태: %s", roomNumber, roomName, charge, reservationFlag);
+
+        /*return "Room{" +
                 "roomNumber=" + roomNumber +
                 ", roomName='" + roomName + '\'' +
                 ", persons=" + persons +
                 ", charge=" + charge +
                 ", reservation=" + reservationFlag +
-                '}';
+                '}';*/
     }
 
 }

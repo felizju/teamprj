@@ -55,7 +55,7 @@ public class ResController implements AppController {
             List<Room> roomList = roomRepository.searchRoom("", SearchCondition.RESERVATION_FLAG);
             int count = roomList.size();
             if (count > 0) {
-                System.out.printf("\n======= 예약가능 객실 목록  =========\n[ 총 %d개의 객실이 조회되었습니다! ]\n", count);
+                System.out.printf("\n━━━━⊱* 예약가능 객실 목록  *⊰━━━━━\n[ 총 %d개의 객실이 조회되었습니다! ]\n", count);
                 for (Room room : roomList) {
                     System.out.println(room);
                 }
@@ -105,7 +105,7 @@ public class ResController implements AppController {
     }
 
     private void reservationCancel() {
-        System.out.println("\n============ 예약 취소 ============");
+        System.out.println("\n━━━━⊱* 예약 취소 *⊰━━━━━");
         System.out.println("\n[예약자명]을 입력하세요!");
         System.out.println("---▶  [0]을 누르면 이전으로 돌아갑니다!");
 
@@ -116,11 +116,11 @@ public class ResController implements AppController {
         int count = resUserList.size();
 
         if (count > 0) {
-            System.out.printf("\n============ 검색 결과  ============\n[ 총 %d건 조회되었습니다! ]\n", count);
+            System.out.printf("\n━━━━⊱* 검색 결과 *⊰━━━━━\n[ 총 %d건 조회되었습니다! ]\n", count);
             for (User user : resUserList) {
                 System.out.println(user);
             }
-            System.out.println("==================================");
+            System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━⊱*");
 
             int resNum = 0;
             String roomNum = "";
@@ -164,7 +164,7 @@ public class ResController implements AppController {
 
 
     private void checkReservation() {
-        System.out.println("\n============ 예약 확인 ============");
+        System.out.println("\n━━━━⊱* 예약 확인 *⊰━━━━━");
         System.out.println("\n[예약자명]을 입력하세요!");
         System.out.println("---▶  [0]을 누르면 이전으로 돌아갑니다!");
         String resName = AppUI.inputString("--—▶  예약자명 : ");
@@ -181,12 +181,16 @@ public class ResController implements AppController {
         List<User> resUserList = userRepository.searchUserList(resNum, SearchCondition.RESERVATION_NUMBER);
         int count = resUserList.size();
         if (count > 0) {
-            System.out.printf("\n============ 검색 결과  ============\n[ 총 %d건 조회되었습니다! ]\n", count);
+            System.out.printf("\n━━━━⊱* 검색 결과  *⊰━━━━━\n[ 총 %d건 조회되었습니다! ]\n", count);
             for (User user : resUserList) {
                 System.out.println(user);
             }
             System.out.println("\n---▶  [ENTER]를 누르면 이전으로 돌아갑니다!");
             AppUI.inputString("");
+        } else {
+            System.out.println("등록된 고객이 아닙니다.");
+            AppUI.inputString("");
+            return;
         }
     }
 

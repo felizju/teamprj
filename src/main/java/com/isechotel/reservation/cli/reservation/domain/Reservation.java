@@ -68,14 +68,11 @@ public class Reservation {
         this.status = status;
     }
 
+
     @Override
     public String toString() {
-        return "Reservation{" +
-                "resNumber=" + resNumber +
-                ", user=" + user +
-                ", room=" + room +
-                ", status=" + status +
-                '}';
+        return String.format(">>> 예약번호 : %d\n>>> 고객명 : %s\n>>> 연락처 : %s\n>>> 예약한 방 : %s\n",
+                resNumber, user.getUserName(), user.getPhone(),room.getRoomName());
     }
 
 }
