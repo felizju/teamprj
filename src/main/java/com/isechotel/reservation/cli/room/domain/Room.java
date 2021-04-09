@@ -86,13 +86,8 @@ public class Room {
 
     @Override
     public String toString() {
-        return "Room{" +
-                "roomNumber=" + roomNumber +
-                ", roomName='" + roomName + '\'' +
-                ", persons=" + persons +
-                ", charge=" + charge +
-                ", reservation=" + reservationFlag +
-                '}';
+        return String.format("방번호 : %d | 방이름 : %s | 방 가격 : %d\n",
+                roomNumber, roomName, charge);
     }
 
 }

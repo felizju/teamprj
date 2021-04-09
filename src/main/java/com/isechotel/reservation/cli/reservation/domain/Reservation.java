@@ -12,7 +12,7 @@ public class Reservation {
     private int resNumber; // 예약 번호
     private User user; // 고객 정보
     private Room room; // 객실 정보
-//    private LocalDate checkInDate; // 체크인 날짜
+    //    private LocalDate checkInDate; // 체크인 날짜
 //    private LocalDate checkOutDate; // 체크아웃 날짜
     private Status status; // 예약상태
     private int rentNum;
@@ -70,12 +70,7 @@ public class Reservation {
 
     @Override
     public String toString() {
-        return "Reservation{" +
-                "resNumber=" + resNumber +
-                ", user=" + user +
-                ", room=" + room +
-                ", status=" + status +
-                '}';
+        return String.format("예약번호 : %d | 고객명 : %s | 연락처 : %s | 예약한 방 : %s\n",
+                resNumber, user.getUserName(), user.getPhone(), room.getRoomName());
     }
-
 }

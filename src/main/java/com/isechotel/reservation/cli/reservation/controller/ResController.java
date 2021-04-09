@@ -91,8 +91,10 @@ public class ResController implements AppController {
 
                     System.out.printf("\n[%s]님 예약이 완료되었습니다. 감사합니다.\n",resUser.getUserName());
                     System.out.printf("예약번호 : %d  |  결제금액 : %d원\n", newRes.getResNumber(), ChargeMoney(rentDay, rentRoom.getRoomName()));
-                    System.out.println("\n---▶  [ENTER]를 누르면 계속 진행됩니다!");
-                    AppUI.inputString("");
+                    System.out.println();
+                    /*System.out.println("\n---▶  [ENTER]를 누르면 계속 진행됩니다!");
+                    AppUI.inputString("");*/
+                    return;
                 } else {
                     System.out.println("\n[ 고객 정보 검색 결과가 없습니다! ]");
                     break;
@@ -118,7 +120,8 @@ public class ResController implements AppController {
         if (count > 0) {
             System.out.printf("\n━━━━⊱* 검색 결과 *⊰━━━━━\n[ 총 %d건 조회되었습니다! ]\n", count);
             for (User user : resUserList) {
-                System.out.println(user);
+                System.out.println("예약번호 : " + user.getResNumber() + " " +
+                        "예약한 객실번호 : " + user.getRentRoomNumber() + "\n" + user);
             }
             System.out.println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━⊱*");
 
@@ -136,32 +139,35 @@ public class ResController implements AppController {
                 System.out.println("[ 숫자만 기입해주세요! (예 : 1) ]");
             }
 
-            List<Room> resRoomList = roomRepository.searchRoom(roomNum, SearchCondition.ROOM_NUMBER);
-            User resUser = null;
-            Room resRoom = null;
+            try {
+                List<Room> resRoomList = roomRepository.searchRoom(roomNum, SearchCondition.ROOM_NUMBER);
+                User resUser = null;
+                Room resRoom = null;
 
-            for (User user : resUserList) {
-                if (user.getResNumber() == resNum) {
-                    resUser = user;
-                    break;
+                for (User user : resUserList) {
+                    if (user.getResNumber() == resNum) {
+                        resUser = user;
+                        break;
+                    }
                 }
-            }
 
-            for (Room room : resRoomList) {
-                if (room.getRoomNumber() == Integer.parseInt(roomNum)) {
-                    resRoom = room;
-                    break;
+                for (Room room : resRoomList) {
+                    if (room.getRoomNumber() == Integer.parseInt(roomNum)) {
+                        resRoom = room;
+                        break;
+                    }
                 }
+                resRepository.resCancel(new Reservation(resUser, resRoom, 0));
+
+                System.out.println("\n취소 완료되었습니다!");
+            } catch (Exception e) {
+                System.out.println("번호를 다시 확인해주세요.");
             }
-            resRepository.resCancel(new Reservation(resUser, resRoom, 0));
-
-            System.out.println("\n취소 완료되었습니다!");
-
-        } else {
+            } else {
             System.out.println("[ 예악자 정보 검색 결과가 없습니다! ]");
-        }
-    }
+            }
 
+    }
 
     private void checkReservation() {
         System.out.println("\n━━━━⊱* 예약 확인 *⊰━━━━━");
@@ -183,7 +189,7 @@ public class ResController implements AppController {
         if (count > 0) {
             System.out.printf("\n━━━━⊱* 검색 결과  *⊰━━━━━\n[ 총 %d건 조회되었습니다! ]\n", count);
             for (User user : resUserList) {
-                System.out.println(user);
+                System.out.println("예약번호 : " + resNum + " " + user);
             }
             System.out.println("\n---▶  [ENTER]를 누르면 이전으로 돌아갑니다!");
             AppUI.inputString("");

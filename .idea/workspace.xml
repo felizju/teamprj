@@ -7,6 +7,11 @@
     <list default="true" id="766d4e9d-bf08-4375-b2b0-4c892adcc345" name="디폴트 변경 목록" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/isechotel/reservation/cli/reservation/controller/ResController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isechotel/reservation/cli/reservation/controller/ResController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isechotel/reservation/cli/reservation/domain/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isechotel/reservation/cli/reservation/domain/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isechotel/reservation/cli/reservation/repository/MemoryResRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isechotel/reservation/cli/reservation/repository/MemoryResRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isechotel/reservation/cli/room/domain/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isechotel/reservation/cli/room/domain/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isechotel/reservation/cli/user/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isechotel/reservation/cli/user/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/isechotel/reservation/cli/user/domain/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/isechotel/reservation/cli/user/domain/User.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

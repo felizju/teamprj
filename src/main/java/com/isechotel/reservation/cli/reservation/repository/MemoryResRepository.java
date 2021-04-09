@@ -19,6 +19,7 @@ public class MemoryResRepository implements ResRepository {
 
         // 유저 연계 정보 처리
         rentUser.setResNumber(rentUser.getUserNumber());
+        rentUser.setRentRoomNumber(rentRoom.getRoomNumber());
 
 
     }
@@ -34,6 +35,7 @@ public class MemoryResRepository implements ResRepository {
 
         // 유저 연계 정보 처리
         rentUser.setResNumber(0);
+        rentUser.setRentRoomNumber(0);
 
         // 예약 정보 연계 처리
         reservation.setStatus(Status.OUT);

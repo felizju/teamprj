@@ -64,6 +64,7 @@ public class UserController implements AppController {
                 condition = SearchCondition.ALL;
                 break;
             default:
+                if(selection == 2) {break;}
                 System.out.println("[ 메뉴를 잘못 선택하셨습니다! ]");
         }
 

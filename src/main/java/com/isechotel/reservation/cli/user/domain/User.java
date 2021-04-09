@@ -10,7 +10,15 @@ public class User {
     private String phone;
     private String region;
     private int resNumber;
-    private int totalCharge;
+    private int rentRoomNumber;
+
+    public int getRentRoomNumber() {
+        return rentRoomNumber;
+    }
+
+    public void setRentRoomNumber(int rentRoomNumber) {
+        this.rentRoomNumber = rentRoomNumber;
+    }
 
     public int getResNumber() {
         return resNumber;
@@ -68,14 +76,9 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
-                "userNumber=" + userNumber +
-                ", userName='" + userName + '\'' +
-                ", phone='" + phone + '\'' +
-                ", region='" + region + '\'' +
-                ", resNumber=" + resNumber +
-                ", totalCharge=" + totalCharge +
-                '}';
+        return String.format("고객번호 : %s | 고객명 : %s | 연락처 : %s | 거주지 : %s\n",
+                userNumber, userName, phone, region);
+
     }
 }
 
